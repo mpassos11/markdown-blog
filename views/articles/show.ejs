@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1><%= article.title %> </h1>
+    <p><%= article.createdAt.toLocaleDateString() %> </p>
+
+    <a href="/">All Articles</a>
+    <a href="/articles/edit/<%= article.id %> ">Edit</a>
+
+    <%= article.markdown %> 
+</body>
+</html>
