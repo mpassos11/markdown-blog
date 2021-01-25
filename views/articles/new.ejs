@@ -6,14 +6,8 @@
     <title>Blog</title>
 </head>
 <body>
-    <h1>Blog Articles</h1>
-    <a href="/articles/new">New article</a>
-
-    <div>
-        <h4>Article title</h4>
-        <p>1/25/2021</p>
-        <p>Article description</p>
-        
-    </div>
+    <form action="/articles" method="post">
+        <%- include('_form_fields') %> 
+    </form>
 </body>
 </html>
