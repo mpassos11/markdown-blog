@@ -1,0 +1,28 @@
+{
+  "name": "markdown-blog",
+  "version": "1.0.0",
+  "description": "A Markdown Blog with Node.js, Express and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpassos11/markdown-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpassos11/markdown-blog/issues"
+  },
+  "homepage": "https://github.com/mpassos11/markdown-blog#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
