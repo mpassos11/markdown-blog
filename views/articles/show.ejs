@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-</head>
-<body>
-    <h1><%= article.title %> </h1>
-    <p><%= article.createdAt.toLocaleDateString() %> </p>
-
-    <a href="/">All Articles</a>
-    <a href="/articles/edit/<%= article.id %> ">Edit</a>
-
-    <%- article.sanitizedHtml %> 
-</body>
-</html>
+<%- include('../partials/header.ejs') %>
+<div class="container">
+    <div class="card mt-4">
+        <div class="body" style="padding: 10px;">
+            <div class="row">
+                <div class="col">
+                    <h4 class="card-title"><%= article.title %></h4>
+                </div>
+                <div class="col text-right">
+                    <a href="/" class="btn btn-secondary">All Articles</a>
+                    <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+                </div>
+            </div>
+            <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleString() %></div>
+            <div class="card-text mb-2"><%- article.sanitizedHtml %></div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %> 

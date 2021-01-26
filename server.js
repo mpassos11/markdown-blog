@@ -6,7 +6,7 @@ const Article = require('./models/article');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://root:root@cluster0.gvzza.mongodb.net/markdownBlog?retryWrites=true&w=majority', {
+mongoose.connect('', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

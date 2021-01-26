@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-</head>
-<body>
-    <h1>Blog Articles</h1>
-    <a href="/articles/new">New article</a>
-
-    <% articles.forEach(article => { %>
-        <div>
-            <h4><%= article.title %> </h4>
-            <p><%= article.createdAt.toLocaleString() %> </p>
-            <p><%= article.description %> </p>
-            <a href="articles/<%= article.slug %>">Read More</a>
-            <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-            </form>
+<%- include('../partials/header.ejs') %> 
+<div class="container">
+    <div class="card my-4">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h4>Blog Articles</h4>
+                </div>
+                <div class="col text-right">
+                    <a href="/articles/new" class="btn btn-success text-right">New article</a>
+                </div>
+            </div>
         </div>
-    <% }) %>
-    
-</body>
-</html>
+        <div class="card-body">
+            <% articles.forEach(article => { %>
+                <div class="card mt-4" style="padding: 10px;">
+                    <div class="card-body">
+                        <h4 class="card-title"><%= article.title %></h4>
+                        <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleString() %></div>
+                        <div class="card-text mb-2"><%= article.description %></div>
+                        <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+                        <form action="/articles/<%= article.id %>?_method=DELETE" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %> 
