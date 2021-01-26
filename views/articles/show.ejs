@@ -12,6 +12,6 @@
     <a href="/">All Articles</a>
     <a href="/articles/edit/<%= article.id %> ">Edit</a>
 
-    <%= article.markdown %> 
+    <%- article.sanitizedHtml %> 
 </body>
 </html>
